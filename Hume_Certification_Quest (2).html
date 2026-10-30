@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Hume Certification Quest | Guide-Based Study</title>
+<style>
+:root{--bg:#0b1020;--panel:#151d34;--text:#f6f7fb;--muted:#aab6d0;--teal:#42e0cb;--coral:#ff8075;--gold:#ffd071;--green:#78e2ac;--line:rgba(255,255,255,.1)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 10% 0%,#1b3150 0,transparent 40%),var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,-apple-system,Segoe UI,sans-serif}.wrap{max-width:1120px;margin:auto;padding:24px}
+header{min-height:400px;display:grid;grid-template-columns:1.35fr .65fr;gap:30px;align-items:center;padding:40px 0}.eyebrow{color:var(--teal);font-weight:800;letter-spacing:.15em;text-transform:uppercase;font-size:.76rem}h1{font-size:clamp(2.6rem,6vw,5.2rem);line-height:.98;letter-spacing:-.055em;margin:.6rem 0 1rem}h1 span{color:var(--teal)}.lead{font-size:1.15rem;color:var(--muted);max-width:640px}
+.art{height:260px;position:relative;display:grid;place-items:center}.orb{position:absolute;border-radius:50%;filter:drop-shadow(0 15px 30px #0005)}.o1{width:190px;height:190px;background:linear-gradient(145deg,var(--teal),#1c8f9d);transform:translate(-20px,-15px)}.o2{width:112px;height:112px;background:linear-gradient(145deg,var(--coral),#d74c73);transform:translate(95px,65px)}.o3{width:70px;height:70px;background:linear-gradient(145deg,var(--gold),#e89a39);transform:translate(-105px,95px)}.hero-card{z-index:2;border:1px solid #ffffff45;background:#17233bcc;border-radius:22px;padding:22px 26px;box-shadow:0 20px 60px #0005;transform:rotate(-5deg)}.hero-card strong{display:block;font-size:1.25rem}.hero-card small{color:var(--muted)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.btn{border:0;border-radius:999px;padding:12px 19px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .2s}.btn:hover{transform:translateY(-2px)}.primary{background:var(--teal);color:#071421}.secondary{border:1px solid var(--line);background:#ffffff0b;color:var(--text)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0 46px}.stat{background:#ffffff08;border:1px solid var(--line);border-radius:16px;padding:18px}.stat b{display:block;font-size:1.55rem;color:var(--gold)}.stat span{font-size:.88rem;color:var(--muted)}
+section{margin:50px 0}.head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:18px}h2{font-size:clamp(1.8rem,4vw,2.7rem);letter-spacing:-.035em;line-height:1.1;margin:0}.head p{margin:0;color:var(--muted);max-width:560px}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}input[type=search]{flex:1;min-width:220px;background:var(--panel);border:1px solid var(--line);color:var(--text);border-radius:12px;padding:13px 15px;font:inherit}.modules{display:grid;gap:10px}.module{background:linear-gradient(135deg,#18223a,#121a2d);border:1px solid var(--line);border-radius:16px;overflow:hidden}.module[open]{border-color:#42e0cb66}.module summary{cursor:pointer;display:flex;align-items:center;gap:14px;list-style:none;padding:17px 18px}.module summary::-webkit-details-marker{display:none}.num{color:var(--teal);font-weight:900;font-size:.82rem;letter-spacing:.08em}.module summary b{flex:1}.plus{color:var(--gold);font-size:1.2rem}.modulebody{padding:0 22px 22px 56px;color:#d7deed}.modulebody li{margin:.35rem 0}
+.progress-wrap{background:#ffffff12;border-radius:99px;height:8px;overflow:hidden;margin:12px 0 6px}.progress{height:100%;width:0;background:linear-gradient(90deg,var(--teal),var(--gold));transition:width .3s}.qtop{display:flex;justify-content:space-between;color:var(--muted);margin:14px 0}.quizgrid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(240px,.6fr);gap:20px}.scene{perspective:1400px;min-height:470px}.flip{height:100%;min-height:470px;position:relative;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.2,.7,.2,1);cursor:pointer}.flip.flipped{transform:rotateY(180deg)}.face{position:absolute;inset:0;backface-visibility:hidden;border-radius:24px;padding:30px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid #ffffff17;box-shadow:0 22px 55px #0003}.front{background:linear-gradient(140deg,#1b3551,#17223c)}.back{background:linear-gradient(140deg,#164744,#173044);transform:rotateY(180deg)}.pill{display:inline-block;width:max-content;border-radius:999px;background:#42e0cb20;color:var(--teal);padding:5px 10px;font-size:.78rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase}.face h3{font-size:clamp(1.4rem,3vw,2.1rem);line-height:1.25;margin:18px 0}.face p{color:#d5dfef}.hint{font-size:.88rem;color:var(--muted)}.back h3{font-size:1.35rem;color:var(--green)}.options{display:grid;gap:8px;margin:14px 0}.option{width:100%;text-align:left;border:1px solid #ffffff26;border-radius:12px;padding:10px 13px;background:#07142155;color:var(--text);font:inherit;cursor:pointer;transition:border-color .2s,background .2s}.option:hover{border-color:var(--teal)}.option.selected{border-color:var(--teal);background:#42e0cb22;box-shadow:inset 0 0 0 1px var(--teal)}.option:focus-visible{outline:2px solid var(--gold);outline-offset:2px}#reveal:disabled{opacity:.45;cursor:not-allowed;transform:none}.option:disabled{cursor:default}.result-good{color:var(--green)!important}.result-wrong{color:var(--coral)!important}.why{padding:14px 16px;border-radius:13px;background:#071a223d;border:1px solid #ffffff17}.side{border-radius:20px;background:var(--panel);border:1px solid var(--line);padding:22px}.side h3{margin-top:0}.dots{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:14px 0}.dot{aspect-ratio:1;border:1px solid var(--line);border-radius:10px;background:#ffffff08;color:var(--muted);cursor:pointer;font-weight:800}.dot.active{background:var(--teal);color:#06131f}.dot.done{border-color:var(--green);color:var(--green)}.nav{display:flex;gap:12px;margin-top:16px}.nav .btn{flex:1}.checkline{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:.9rem;margin-top:18px}.checkline input,.gate input{accent-color:var(--teal);width:18px;height:18px}.gates{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.gate{display:flex;gap:12px;padding:16px;background:#ffffff07;border:1px solid var(--line);border-radius:14px}.gate b{display:block}.gate span{font-size:.9rem;color:var(--muted)}.callout{padding:24px;border-radius:20px;background:linear-gradient(120deg,#1b3d4b,#1a2742);border:1px solid #42e0cb44}.source{border:1px solid var(--line);border-radius:16px;background:#ffffff05;padding:16px}.source summary{cursor:pointer;font-weight:800}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.65 monospace;color:#c8d3e7;max-height:700px;overflow:auto}footer{padding:35px 0 20px;color:var(--muted);border-top:1px solid var(--line);font-size:.9rem}
+@media(max-width:760px){.wrap{padding:18px}header{grid-template-columns:1fr;padding-top:35px;gap:0}.art{height:220px}.stats{grid-template-columns:1fr}.head{display:block}.head p{margin-top:10px}.quizgrid{grid-template-columns:1fr}.gates{grid-template-columns:1fr}.modulebody{padding-left:22px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+.source-note{padding:10px 12px;border-left:3px solid var(--teal);background:#eef8f8;border-radius:6px;font-size:.9rem;color:#34445c}
+.modulebody h3{margin:18px 0 8px}
+.modulebody p{overflow-wrap:anywhere}
+
+/* Light interface aligned with the requested study-app theme */
+:root{--bg:#f4f7fb;--panel:#ffffff;--text:#172033;--muted:#58657a;--teal:#087f8c;--coral:#c44745;--gold:#a66a00;--green:#16794b;--line:rgba(23,32,51,.14)}
+body{background:radial-gradient(ellipse at 10% 0%,#d9f1f0 0,transparent 42%),var(--bg);color:var(--text)}
+.art .o1{background:linear-gradient(145deg,#7ddbd2,#2e9ca8)}.art .o2{background:linear-gradient(145deg,#ffb0a7,#d96a83)}.art .o3{background:linear-gradient(145deg,#ffe2a0,#e8ad43)}
+.hero-card{background:#ffffffdc;border-color:#cbd5e1;box-shadow:0 20px 60px #17203316}.hero-card small{color:var(--muted)}
+.secondary{border:1px solid var(--line);background:#ffffff;color:var(--text)}
+.module{background:linear-gradient(135deg,#ffffff,#f8fbff);border-color:var(--line)}.modulebody{color:#344054}
+input[type=search]{background:#fff;border-color:#d5dce7;color:var(--text)}
+.front{background:linear-gradient(140deg,#e5f3f7,#f4f7ff)}.back{background:linear-gradient(140deg,#e1f5ed,#edf7fb)}
+.face{border-color:#d9e2ec;box-shadow:0 22px 55px #17203312}.face p{color:#344054}.pill{background:#087f8c14;color:#087f8c}
+.option{border-color:#cbd5e1;background:#ffffff;color:var(--text)}.option.selected{border-color:var(--teal);background:#087f8c12;box-shadow:inset 0 0 0 1px var(--teal)}
+.why{background:#ffffffa8;border-color:#dbe3ed}.side{background:#fff;border-color:var(--line)}.dot{background:#fff;border-color:var(--line);color:var(--muted)}.dot.active{background:var(--teal);color:#fff}
+.progress-wrap{background:#dce4ee}.progress{background:linear-gradient(90deg,#087f8c,#d59a29)}
+.stat{background:#ffffff;border-color:var(--line)}
+@media(prefers-color-scheme:dark){/* The study interface intentionally remains light for readability. */}
+
+
+/* Tables for tool/interface reference and emphasized definitions */
+.reference-table{width:100%;border-collapse:collapse;margin:12px 0 22px;background:#fff;border:1px solid #d6e0ec;border-radius:10px;overflow:hidden;display:table}
+.reference-table th,.reference-table td{padding:11px 13px;border:1px solid #dce4ee;text-align:left;vertical-align:top}
+.reference-table th{background:#e8f4f7;color:#17364a;font-weight:800}
+.reference-table td:first-child{width:28%;font-weight:750;color:#24364b}
+.reference-table .definition-highlight{font-weight:800;background:#fff3c4;color:#493500}
+@media(max-width:640px){.reference-table th,.reference-table td{padding:8px;font-size:.9rem}.reference-table td:first-child{width:34%}}
+</style>
+<style id="light-theme-override">
+:root{--bg:#f4f7fb;--panel:#ffffff;--text:#18243a;--muted:#5b6b82;--teal:#087f8c;--coral:#c94d55;--gold:#a96808;--green:#16804a;--line:rgba(31,48,75,.16)}
+body{background:radial-gradient(ellipse at 10% 0%,#dcecf7 0,transparent 43%),var(--bg);color:var(--text)}
+.hero-card{background:#ffffffdf;border-color:#ffffff;box-shadow:0 20px 50px #344b6520}
+.orb{filter:drop-shadow(0 15px 25px #33415520)}
+.o1{background:linear-gradient(145deg,#71d5ca,#16899a)}.o2{background:linear-gradient(145deg,#ffc2b9,#d75d7a)}.o3{background:linear-gradient(145deg,#ffe39a,#df9a35)}
+.secondary{background:#fff;color:#26364e;border-color:#d4deea}
+.stat{background:#ffffffc9}
+.module{background:linear-gradient(135deg,#fff,#f0f6fb);border-color:#d8e2ee}
+.modulebody{color:#34445c}
+.progress-wrap{background:#dfe7f0}
+.front{background:linear-gradient(140deg,#e4f0fa,#f5f8ff);border-color:#d0dceb}
+.back{background:linear-gradient(140deg,#d8f4ec,#e5f0fb);border-color:#c4e3dc}
+.face p{color:#42536b}
+.pill{background:#d9f5f1;color:#087f8c}
+.option{background:#fff;color:#26364e;border-color:#d2deeb}
+.option.selected{background:#d9f5f1;border-color:#087f8c}
+.why{background:#ffffffa8;border-color:#d0e1e8}
+.side{background:#fff;border-color:#d8e2ee}
+.dot{background:#f5f8fc;color:#53647c;border-color:#d8e2ee}
+.dot.active{background:#087f8c;color:white}
+.dot.done{border-color:#16804a;color:#16804a}
+.gate,.source{background:#fff;border-color:#d8e2ee}
+.callout{background:linear-gradient(120deg,#e1f5f4,#eaf0fb);border-color:#b9e2dc}
+pre{color:#35445a}
+footer{border-color:#d8e2ee}
+#reveal:disabled{opacity:.55}
+@media print{body{background:white;color:#18243a}}
+
+.editing .modulebody{outline:2px dashed #087f8c;outline-offset:-5px;border-radius:10px;min-height:70px;cursor:text}
+.editing .modulebody:focus{outline:2px solid #087f8c}
+[hidden]{display:none!important}
+</style>
+</head><body><div class="wrap">
+<header><div><div class="eyebrow">Interactive training · New joiner edition</div><h1>CURRY <span>×</span><br/>TASKY<br/><span>KNOWLEDGE QUEST</span></h1><p class="lead">Study the Certification Hume User Guide through 14 topic modules, with definitions and key rules in the modules and a separate interactive quiz section.</p><div class="actions"><a class="btn primary" href="#quiz">Start the quiz ↗</a><a class="btn secondary" href="#learning">Explore learning modules</a></div></div><div aria-hidden="true" class="art"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="hero-card"><strong>Learn · Explore<br/>Practise · Unlock</strong><small>14 modules / 20 quiz challenges</small></div></div></header>
+<div class="stats"><div class="stat"><b>14</b><span>Learning modules</span></div><div class="stat"><b>20</b><span>Flip-card challenges</span></div><div class="stat"><b>100%</b><span>Self-paced · offline-ready</span></div></div>
+<section id="learning"><div class="head"><div><div class="eyebrow">Your learning path</div><h2>Explore the toolkit</h2></div><p>Open a module to review key concepts. Use the search box to find a topic quickly.</p></div><div class="toolbar"><input id="moduleSearch" placeholder="Search modules, topics, or keywords…" type="search"/><button class="btn secondary" id="expandAll">Expand all</button><button class="btn secondary" id="collapseAll">Collapse all</button><button class="btn secondary" id="editContent">Edit Content</button><button class="btn primary" id="saveContent" hidden>Save Changes</button><button class="btn secondary" id="cancelContent" hidden>Cancel Edits</button></div><p id="editStatus" class="source-note" hidden>Editing is on. Click text to edit it, including table cells and definitions. Select Save Changes to keep your edits in this browser.</p><div class="modules"><details class="module"><summary><span class="num">01</span><b>Hume Tools Overview</b><span class="plus">＋</span></summary><div class="modulebody"><p class="source-note">Guide text below uses the definitions and wording from the provided Certification Hume User Guide.</p><h3>1.1 Introduction</h3>
+<h3>Hume tools</h3>
+<p>The Hume tools that we encounter on a daily basis are Curry, aka the Knowledge Graph Editor (KGE), and Tasky, the job assignment interface.</p>
+<p>Curry is the ultimate Knowledge Graph Editor. It allows us to curate data and override incorrect values originating in other data graphs.</p>
+<p>The home page for Curry is:</p>
+<p><a href="https://hume.google.com/edit" rel="noreferrer" target="_blank">https://hume.google.com/edit</a></p>
+<p>Assignment of jobs and job queues is managed in a job management user interface called Tasky. From Tasky, you start work on new tasks and resume work on tasks that were temporarily put on hold.</p>
+<p>The home page for Tasky is:</p>
+<p><a href="https://hume.google.com/Tasky/assignments" rel="noreferrer" target="_blank">https://hume.google.com/Tasky/assignments</a></p>
+<p>Browser requirement: When working with these tools, use Google Chrome, a stable non-beta release. A Beta version can be recognized by “dev” at the end of the version number. You can check your Chrome version at chrome://chrome/.</p>
+<h3>1.2 Curry interface elements</h3>
+<table class="reference-table"><thead><tr><th>Hume tool element</th><th>Definition / purpose</th></tr></thead><tbody><tr><td>Hume Menu</td><td class="definition-highlight"><strong>Click to select pages you need, e.g. Contributions, Search Topics, Schema, Assignments, etc.</strong></td></tr><tr><td>Search bar</td><td class="definition-highlight"><strong>Add a topic name to find it in the graph.</strong></td></tr><tr><td>Advanced search</td><td class="definition-highlight"><strong>Takes you to the Search Topics page with the advanced search options.</strong></td></tr><tr><td>Graph selector</td><td class="definition-highlight"><strong>The default is auto.all, which shows all the data needed for work. Other instances of the graph may show more or less data.</strong></td></tr><tr><td>Three-dot menu</td><td class="definition-highlight"><strong>Used to send feedback if there are issues. It also provides a shortcut to the User Guide and a switch to Dark Theme.</strong></td></tr><tr><td>User thumbnail</td><td class="definition-highlight"><strong>Displays the user thumbnail.</strong></td></tr><tr><td>Canonical ID</td><td class="definition-highlight"><strong>The canonical ID of the topic.</strong></td></tr><tr><td>Topic name</td><td class="definition-highlight"><strong>The topic name, with the display language. The default language is English.</strong></td></tr><tr><td>Notable type</td><td class="definition-highlight"><strong>Displays the notable type of the topic.</strong></td></tr><tr><td>Recon</td><td class="definition-highlight"><strong>Lists reconciliation requests. For example, if you find another topic for Taylor Swift, you can request a merge.</strong></td></tr><tr><td>Links</td><td class="definition-highlight"><strong>Shortcuts to pages with contributions and triples, KP display, and recon debug.</strong></td></tr><tr><td>Mode</td><td class="definition-highlight"><strong>Can be VIEWING (default) or EDITING. VIEWING mode hides all empty properties. EDITING mode enables functions to create contributions.</strong></td></tr><tr><td>Contents panel</td><td class="definition-highlight"><strong>Arranged alphabetically except for /type/object and /common/topic, which are always on top. Scroll down to see all types. Expand a type by clicking on the arrow on the left. Properties without values are grayed out. Click on a type or property HRID to navigate to that type/property in the topic.</strong></td></tr><tr><td>Image</td><td class="definition-highlight"><strong>Some topics have images and some do not.</strong></td></tr><tr><td>Description blurb</td><td class="definition-highlight"><strong>Either autoloaded from sources such as Wikipedia or manually asserted.</strong></td></tr><tr><td>Sources links</td><td class="definition-highlight"><strong>Expand to see full lists of sources.</strong></td></tr><tr><td>All IDs</td><td class="definition-highlight"><strong>Click to see all IDs in the topic cluster. These may include previously merged topics or source IDs with data for the topic.</strong></td></tr><tr><td>[+] Add Type</td><td class="definition-highlight"><strong>Enabled in EDITING mode only for adding types to a topic.</strong></td></tr><tr><td>[+] New Topic</td><td class="definition-highlight"><strong>Enabled in EDITING mode only for creating new topics.</strong></td></tr><tr><td>[+] Match</td><td class="definition-highlight"><strong>Enabled in EDITING mode only for matching a topic with a source ID.</strong></td></tr><tr><td>Language</td><td class="definition-highlight"><strong>Select from the list to view the topic in another locale. The data in that locale might differ from English.</strong></td></tr></tbody></table>
+<p><strong>Important note: Although you can create contributions in Curry for testing purposes, they cannot be processed outside of Tasky and should be discarded. Only contributions written in Tasky result in graph changes.</strong></p>
+</div></details><details class="module"><summary><span class="num">02</span><b>Topics, Types, Properties &amp; Values</b><span class="plus">＋</span></summary><div class="modulebody"><p class="source-note">Guide text below uses the definitions and wording from the provided Certification Hume User Guide.</p><h3>2.1 Topics</h3>
+<p>Topics are assigned machine IDs (MIDs) that start with /m/, /g/ or /x/.</p>
+<p>/m/ IDs come from the Freebase graph, the forerunner of Curry.</p>
+<p>The origins of /g/ IDs are unknown.</p>
+<p>/x/ entities appear in experimental jobs.</p>
+<p>We only do edits on /m/ and /g/ topics.</p>
+<p>Unreconciled Objects (URO)</p>
+<p>Unreconciled Objects (URO) are entities that are not reconciled to any topic and are not confirmed as new topics.</p>
+<p>UROs have a colored banner with “Unreconciled Object (URO)” and a type of “Not yet reconciled.”</p>
+<p>We do not edit UROs, but we can merge them with topics.</p>
+<p>Geo topics</p>
+<p>Geo topics are managed by the Geo team. They have a colored banner with a “Maintained by Geo (Geo Curation Guideline)” note.</p>
+<p>We edit them according to the Geo Curation Guideline.</p>
+<h3>2.2 Types</h3>
+<p>Common types describe topics, e.g. animal owners, people, structures, etc. Common types are found in KG, Hogwild, Geo schema, etc.</p>
+<p>We mostly curate types from the KG schema, except for /base and /user types.</p>
+<p>Compound Value Types (CVT)</p>
+<p>Compound value types (CVTs) express relationships between topics such as ownerships, memberships, marriages, and tenures.</p>
+<p>CVTs have separate pages that are accessed by clicking on “view.” CVTs are usually nameless, with a MID as their only identifier.</p>
+<h3>2.3 Properties</h3>
+<p>Properties contain values pertinent to the type.</p>
+<p>Properties with many values will show the top 10 by default. To see all the properties, click “more.” To arrange all properties alphabetically, click “sort.” In CVTs, click on property headers to sort.</p>
+<p>Special property indicators</p>
+<p>Locked properties</p>
+<p>Locked properties are disabled for Hume editing. They are marked with a lock sign.</p>
+<p>High fan-out properties</p>
+<p>High fan-out properties have a lot of values. They are marked with a carrot sign with three horizontal dots.</p>
+<p>Sensitive properties</p>
+<p>Sensitive properties require double-checking before editing. They are marked with a triangle sign containing an exclamation mark. Pay attention to the message they contain.</p>
+<p>Bare properties</p>
+<p>Bare properties can be curated without asserting a type, e.g. /type/object/name.</p>
+<p>Zombie properties</p>
+<p>Zombie properties must have a type asserted. Properties become zombies when their type was removed, but their values were not.</p>
+<h3>2.4 Values</h3>
+<p>Values that you see in properties are topics, text (letters or numerals), and flags (Has value or No Value).</p>
+<p>Behind each value is a process (team) that asserted it. You can find out each value's provenance and assertion sources.</p>
+</div></details><details class="module"><summary><span class="num">03</span><b>Provenance &amp; Assertion Sources</b><span class="plus">＋</span></summary><div class="modulebody"><p class="source-note">Guide text below uses the definitions and wording from the provided Certification Hume User Guide.</p><h3>3.1 Provenance</h3>
+<p>Provenance shows what process added the value to the graph.</p>
+<p>Check provenance by clicking on the three-dot menu on the top-right-hand side of any type. When selected, each value will show the process and a “show sources” link.</p>
+<h3>3.2 Assertion sources</h3>
+<p>Data sources contain values that are asserted to topics.</p>
+<p>To access assertion sources, click the “show sources” link.</p>
+<p>Non-Hume provenances point to partners' assertion sources.</p>
+<p>Hume-Curry provenance points to our contributions (CIDs), where values were added.</p>
+<p>Some provenances cannot be touched by Hume. If bad data comes from such assertion sources, it is reported to partners to be fixed on their end.</p>
+</div></details><details class="module"><summary><span class="num">04</span><b>Flyouts</b><span class="plus">＋</span></summary><div class="modulebody"><p class="source-note">Guide text below uses the definitions and wording from the provided Certification Hume User Guide.</p><p>Flyouts contain brief information about a topic, type, or property.</p>
+<p>Hover over any linked attribute inside a topic to see a flyout for the entity.</p>
+<p>Flyouts help you understand what a linked topic, type, or property represents without leaving the current page.</p>
+</div></details><details class="module"><summary><span class="num">05</span><b>Search in Curry</b><span class="plus">＋</span></summary><div class="modulebody"><p class="source-note">Guide text below uses the definitions and wording from the provided Certification Hume User Guide.</p><h3>5.1 Basic search</h3>
+<p>You can search for information on Hume in the same way you would on many other websites: by entering keywords in a search box.</p>
+<p>The search box has an autocomplete feature. As you type, it suggests relevant matches from the millions of topics in the Knowledge Graph.</p>
+<p>It initially displays 20 search suggestions. You can use the scrollbar to view those at the bottom. When you scroll to the bottom, it automatically loads more suggestions.</p>
+<p>If you hover your mouse over any suggested result in Hume, a flyout appears containing relevant information about the topic. All types found on the topic are listed at the bottom of the flyout. The list of types is collapsed by default and expands when you hover over it.</p>
+<p>You can open a topic by clicking on the suggestion. You can open a topic from the dropdown in a new tab by pressing CMD+Click on Apple systems or CTRL+Click on Windows/Linux systems.</p>
+<h3>5.2 Search landing page</h3>
+<p>You can access the Hume search landing page by doing any of the following:</p>
+<p>Going to https://hume.google.com/graph/search</p>
+<p>Opening any Hume page and clicking “advanced,” found directly beside the search box at the top of the page.</p>
+<p>Entering text in the search box and pressing ENTER.</p>
+<h3>5.3 Using filters</h3>
+<p>You can search for musical artists named Taylor Swift using:</p>
+<p>Taylor Swift t:/music/artist</p>
+<p>Taylor Swift type:/music/artist</p>
+<p><strong>Important note: If your search does not return results that you know exist, search other contributions or use advanced search, especially when searching for duplicates.</strong></p>
+</div></details><details class="module"><summary><span class="num">06</span><b>Filtering &amp; Advanced Search</b><span class="plus">＋</span></summary><div class="modulebody"><p class="source-note">Guide text below uses the definitions and wording from the provided Certification Hume User Guide.</p><h3>6.1 Filtering by property</h3>
+<p>The advanced search allows you to filter search results by type and also by property.</p>
+<p>Example: You are looking for John Black, a politician who died on August 29, 1854.</p>
+<p>Looking for topics named John Black that are politicians and deceased persons may yield over a dozen results.</p>
+<p>By selecting “Exact match,” the search shows only results for persons whose exact name is John Black. This reduces the number of results to three candidates in the example.</p>
+<p>Please remember that the “Exact Match” search is case sensitive. A search with exact match for john black, without capital letters, will trigger no result in this example.</p>
+<p>To determine which of the three candidates has the matching date of death, you can either open each candidate or use a property constraint to filter the search results using the known date of death.</p>
+<p>Only one result comes up in the example. Opening it allows you to confirm that it is the right candidate.</p>
+<p>Regular date formats</p>
+<p>The standard date formats are:</p>
+<p>yyyy-mm-dd</p>
+<p>yyyy-mm</p>
+<p>yyyy</p>
+<p>If the date is August 29, 1854, it should be entered as 1854-08-29.</p>
+<p>If the digits of the day or month are less than two digits, add a leading zero.</p>
+<p>January 1923: 1923-01, not 1923-1.</p>
+<h3>3 June 1960: 1960-06-03, not 1960-6-3.</h3>
+<p>The type and property constraints are powered by Suggest. If you do not know the exact name of the type or property, start typing the words you would commonly use or the words given in the instructions. You will see suggestions for types and a flyout window with a definition of the type.</p>
+<p>Alternatively, open a topic with the correct type and look up the name of the property.</p>
+<h3>6.2 Advanced features</h3>
+<p>Advanced search is available at:</p>
+<p><a href="https://hume.google.com/graph/search" rel="noreferrer" target="_blank">https://hume.google.com/graph/search</a></p>
+<p>You can access Search Topics directly from the Hume menu, by clicking the second magnifying glass beside the search bar, or by typing text in the search bar and pressing ENTER.</p>
+<p>The property constraints can be set using these comparison operators:</p>
+<p>Operator</p>
+<p>Meaning</p>
+<p>==</p>
+<p>Equal to</p>
+<p>!=</p>
+<p>Is not</p>
+<p>&lt;</p>
+<p>Less than</p>
+<p>&lt;=</p>
+<p>Equal to or less than</p>
+<p>&gt;</p>
+<p>Greater than</p>
+<p>&gt;=</p>
+<p>Equal to or greater than</p>
+<p>EMPTY</p>
+<p>Has no value</p>
+<p>NOT_EMPTY</p>
+<p>Has value</p>
+<p>Main advanced search fields</p>
+<p>Query: For example, Taylor Swift.</p>
+<p>Exact match: Limits results to an exact name match, e.g. Taylor Swift.</p>
+<p>Type: Adds type filters to narrow results, e.g. Taylor Alison Swift (Musical Artist).</p>
+<p>Constraint property + value: For example, Taylor Swift (Alias = Taylor Alison Swift).</p>
+<p>Another example</p>
+<p>Consider songs titled “Home” that were not composed by Michael Bublé. Multiple type and/or property constraints can be specified.</p>
+<p>Note that you can use the /type/object/type != [/domain/type] constraint to find entities that are NOT typed as a particular type.</p>
+<p>For example, you can search for entities that have “bama” in their names but are not a person.</p>
+<p>Other advanced search examples</p>
+<p>Download: Extracts results in a MID format, e.g. skyscrapers 300 m and higher.</p>
+<p>Display language: Shows the language dropdown.</p>
+<p>Showing 1 to 20 next&gt;&gt;: Displays the first 20 results. Click “next &gt;&gt;” to see more.</p>
+<p>Within CVTs: All films starring James Franco and Seth Rogen.</p>
+<p>With the schema: Living US Presidents; entities that have Obama in their names but are not a person called Obama.</p>
+<p>Type + Property + text: Mountains with elevation greater than 5000 m.</p>
+<p>Type + Property: Cocktails with missing ingredients.</p>
+<p>Property + MID: Types that are incompatible with /location/location.</p>
+<p>With umlauts and non-alphanumeric characters: Fuchs war damals schon der Jäger, La’cryma, Ant-man, K. V. Thomas.</p>
+<p>Key queries: tt2488496, or topic(s) with key tt2488496.</p>
+<p>URL queries: http://www.instagram.com/starwarsmovies. This includes support for search of /common/topic/kp_official_website and /common/topic/social_media_presence_uri.</p>
+<p><strong>Important note: If there are too many results, the tool will say “Too many results.” Try adding more type filters or property constraints.</strong></p>
+<p>You search for John Black and receive several results. You know that the person died on August 29, 1854.</p>
+</div></details><details class="module"><summary><span class="num">07</span><b>Reliable &amp; Unreliable Sources</b><span class="plus">＋</span></summary><div class="modulebody"><p class="source-note">Guide text below uses the definitions and wording from the provided Certification Hume User Guide.</p><h3>7.1 Sources and research</h3>
+<p>The basic and simplest task that every contributor must know how to do well is online research. Whether you are a beginner or an advanced contributor, online research skills are essential.</p>
+<p>This section discusses some pointers and specific steps for finding valid online sources. Understanding sources and how to limit the extent of external search is also very important.</p>
+<h3>7.2 Reliable and unreliable sources</h3>
+<p>There are several types of information sources available for us to use, but we must be cautious when choosing them. Some sources are not reliable because the information they contain cannot be trusted.</p>
+<p>Determining whether a source is reliable or official can be tricky, but there are ways to assess it.</p>
+<p>General user-created sources are very common, and these are often the ones we want to avoid. However, some user-populated sources, such as Wikipedia and IMDb, go through verification processes, and their data is often correct, although it may sometimes be incorrect or outdated.</p>
+<p>Unreliable sources</p>
+<p>Sources that we generally want to avoid will often contain the following:</p>
+<p>A lot of advertisements surrounding the data.</p>
+<p>Information reproduced exactly as it appears on Wikipedia or other websites.</p>
+<p>Poor website structure.</p>
+<p>An unfamiliar or off-topic domain name.</p>
+<p>We also usually consider the following unreliable:</p>
+<p>Online forums. Example: Reddit.</p>
+<p>Websites with user-generated content, excluding Wikipedia. Example: The Movie Database (TMDb).</p>
+<p>Websites with obvious substandard quality, such as poorly created, unpopular, or hobby-maintained sites.</p>
+<p>Aggregators. Example: Digg.</p>
+<p>Popular websites that are not considered sources within our projects, including Netflix, eHow, Yahoo Answers, WikiAnswers, WikiHow, and Wikia, among others.</p>
+<p>Fan-made sites.</p>
+<p>Sources that use machine-translated content.</p>
+<p>Reliable sources</p>
+<p>Official or reliable sources will often contain:</p>
+<p>Little to no advertising.</p>
+<p>Unique content.</p>
+<p>Well-structured data with several pictures.</p>
+<p>A topic-related domain name.</p>
+<p>Additional types of sources that can be considered official or trustworthy include news, financial, magazine, or official sports websites, such as The New York Times, The Herald News, CNN, Forbes, Time, Newsweek, NFL.com, NBA.com, and ESPN.com, among others.</p>
+<p>Official websites are also important sources.</p>
+<p>Pointers to assess whether a source is reliable</p>
+<p>When you find a website and try to assess its reliability, consider the following.</p>
+<p>Check the URL: One of the most obvious ways to determine whether a website is valid is to examine its URL. Domains such as .gov and .edu are generally very reliable sources.</p>
+<p>About Us and Contact Us sections: Find out more about the entity that owns or manages the website. Is it an institution or an individual? If the website does not contain these details, it may not be reliable.</p>
+<p>Real-world entities: Websites such as mcdonalds.com and nasdaq.com are considered reliable because they represent real-world entities. This also applies to local websites within your region, e.g. Inquirer.net, which is owned and managed by a newspaper organization in the Philippines.</p>
+<p>Who wrote what? When dealing with articles, check who the author is and the purpose of the article. Is it an academic publication, official government information, data, or gossip?</p>
+<p>Freshness: Whenever you enter a fact in Hume, ensure that the information is up to date. Always check the freshness of sources, especially for time-sensitive data, such as the current population of a location.</p>
+<p>Sources: Find out where and when the website acquired its data. For example, does it link to other online sources, as in the References section of a Wikipedia topic?</p>
+<p>Official website or fan site? For music artists or celebrities, websites may look official but actually be fan-made. A mention or disclaimer may confirm that a site is not official. Fan sites are not considered reliable sources.</p>
+<p>These are pointers, not universal rules that work in every situation.</p>
+<h3>7.3 Inaccurate or contradicting sources</h3>
+<p>No source is 100% reliable. Even Wikipedia or IMDb may contain mistakes. Finding a name within a reliable source does not automatically mean it is correct.</p>
+<p>In rare cases when two different values for the same property appear in a Wikipedia article, or in the article and its infobox, such as two different places of birth, look for external sources to confirm which value is more correct. Otherwise, leave the property blank.</p>
+<p>Do not add information provided in the Wikipedia Categories section at the bottom of an article if that information is not confirmed by the article or external sources.</p>
+<p>When the data presented in a reliable source uses phrases such as “reportedly,” “allegedly,” “apparently,” or “supposedly,” pay special attention to the context. These phrases may indicate that the data is not factually established.</p>
+<p>We want to get as close to 100% accuracy as possible. When you still have doubts about a value after research, leave the property blank.</p>
+<p>Evaluate each source scenario.</p>
+</div></details><details class="module"><summary><span class="num">08</span><b>Tasky: Assignments &amp; Queues</b><span class="plus">＋</span></summary><div class="modulebody"><p class="source-note">Guide text below uses the definitions and wording from the provided Certification Hume User Guide.</p><h3>8.1 Tasky overview</h3>
+<p>For a comprehensive list of Hume terms and definitions, please see the Teraneuro Glossary.</p>
+<p>Assignments, previously known as the My Work page, are available at:</p>
+<p><a href="https://hume.google.com/Tasky/assignments" rel="noreferrer" target="_blank">https://hume.google.com/Tasky/assignments</a></p>
+<h3>8.2 My Queues page</h3>
+<p>The My Queues page has general information about jobs, slices, priorities, queues, and tasks.</p>
+<table class="reference-table"><thead><tr><th>Tasky element / term</th><th>Definition</th></tr></thead><tbody><tr><td>Show Empty and Paused Queues</td><td class="definition-highlight"><strong>A filter to show jobs with zero tasks or tasks that are currently paused.</strong></td></tr><tr><td>Job</td><td class="definition-highlight"><strong>A collection of tasks to process in a certain way. Priority is marked as P0, P1, etc., with P0 being the most urgent.</strong></td></tr><tr><td>Slice</td><td class="definition-highlight"><strong>A sub-collection of all tasks grouped by domain or another common attribute.</strong></td></tr><tr><td>Billing Code</td><td class="definition-highlight"><strong>A unique code assigned to each slice for billing when working on tasks from that slice.</strong></td></tr><tr><td>Queue</td><td class="definition-highlight"><strong>Contains tasks awaiting a specific action. Queues can be Curation, Review, or Senior Review.</strong></td></tr><tr><td>My Parked</td><td class="definition-highlight"><strong>Tasks that were parked due to the end of a shift, unblocking, or similar reasons.</strong></td></tr><tr><td>My Escalated</td><td class="definition-highlight"><strong>Tasks that were escalated and are pending an answer from CLs to a query.</strong></td></tr><tr><td>My Blocked</td><td class="definition-highlight"><strong>Tasks blocked on another task's completion, usually a merge or split, a future date, or a bug.</strong></td></tr><tr><td>My Submitted</td><td class="definition-highlight"><strong>All tasks worked on by a curator, including abandoned or reassigned tasks.</strong></td></tr><tr><td>Available</td><td class="definition-highlight"><strong>Tasks you can start working on. The number of available tasks in a queue is indicated in parentheses.</strong></td></tr></tbody></table>
+<h3>8.3 My Task page</h3>
+<p>The My Task page provides information on specific tasks and their status.</p>
+<p>Status: Can be Parked, Blocked, or Escalated.</p>
+<p>Task: Shows the task name and MID.</p>
+<p>Job: The job associated with the task.</p>
+<p>Slice: The slice associated with the task.</p>
+<p>Billing Code: The billing code to use when working on the task.</p>
+<p>Handoff Requested: A badge indicating that the task has been handed off.</p>
+<p>Queue: Can be Curation, Review, or Senior Review.</p>
+<p>Action: Options are Work on now, Escalate, Blocked by, Park, and Abandon. Choosing an option changes the task status.</p>
+<p><strong>Important note: You should never work on a queue item outside of Tasky.</strong></p>
+<p>A task is blocked because another task must be completed first.</p>
+
+</div></details><details class="module"><summary><span class="num">09</span><b>Tasks, Task Search &amp; Task Detail</b><span class="plus">＋</span></summary><div class="modulebody"><p class="source-note">Guide text below uses the definitions and wording from the provided Certification Hume User Guide.</p><h3>9.1 Task interface</h3>
+<p>A task is a unit of work.</p>
+<p>The task interface includes the following components.</p>
+<table class="reference-table"><thead><tr><th>Tasky task interface element</th><th>Definition / purpose</th></tr></thead><tbody>
+<tr><td>Left-hand-side box</td><td class="definition-highlight"><strong>Shows a topic to work on, job, slice, and billing code. It has links to Guidelines, the Tasks page, and the Task Detail page.</strong></td></tr>
+<tr><td>Task header</td><td class="definition-highlight"><strong>Contains a brief instruction about what to do with the topic and the comments history, which is greyed out when empty. Additional features may include selecting a customer code or using up and down arrows to toggle between several subtasks.</strong></td></tr>
+<tr><td>Contribution cart</td><td class="definition-highlight"><strong>Collects all edits done as part of the task. An optional comment allows users to gather comments while working, before submitting the task for review. Use Done (OC) or More when finishing work.</strong></td></tr>
+</tbody></table>
+<p>The “More” menu has the following actions:</p>
+<p>Action</p>
+<p>Purpose</p>
+<table class="reference-table"><thead><tr><th>Action</th><th>Purpose</th></tr></thead><tbody><tr><td>Park</td><td class="definition-highlight"><strong>Choose to save work for later.</strong></td></tr><tr><td>Escalate</td><td class="definition-highlight"><strong>Choose when you are waiting for a CL to respond to your query.</strong></td></tr><tr><td>Blocked by</td><td class="definition-highlight"><strong>Choose when your work is blocked by another task, a Buganizer ID, or a future date.</strong></td></tr><tr><td>Abandon</td><td class="definition-highlight"><strong>Release the task back into the queue.</strong></td></tr><tr><td>Discard contribution</td><td class="definition-highlight"><strong>Undo all edits and delete the contribution.</strong></td></tr><tr><td>Request Handoff</td><td class="definition-highlight"><strong>Request help from a Language or Domain specialist.</strong></td></tr><tr><td>Can't (OC)</td><td class="definition-highlight"><strong>Indicate that no curation can be done on the task, using one of the available codes.</strong></td></tr></tbody></table>
+<p>Outcome codes (OC) Done and Can't are used when submitting a task for review.</p>
+<p>Done</p>
+<p>Use Done when curation is complete or when no edits need to be made as part of the task.</p>
+<p>Can't outcome codes</p>
+<p>Technical problem: For example, the data returns “Entity Not Found” when searching for the MID to be curated.</p>
+<p>Insufficient time: Use as a last resort, preferring to escalate or swap with another contributor for urgent tasks.</p>
+<p>Out of Scope: For example, the job is about films and the assigned MID is for an animal.</p>
+<p>No Data: Use where there is little to no information on the topic to identify it for work.</p>
+<p>Content behind paywall: The data needed is on a site where you have to pay to access the data.</p>
+<p>Did not sign up for adult content: When you would rather not work on a handoff task because of the content.</p>
+<p>Need Geo ops: When the task needs to be completed by the Geo Ops team.</p>
+<p>No local sources: When there are no sources in the respective locale (en or i18n) to support curation.</p>
+<h3>9.2 Task Search</h3>
+<p>Task Search allows you to search tasks by contributor, status, and other criteria. Click the question mark (?) to read more about filters.</p>
+<h3>9.3 Task Detail</h3>
+<p>Task Detail has information about the task ID, CID with the edits, and other task information.</p>
+<p>Event History shows all leases, timestamps, and comments.</p>
+</div></details><details class="module"><summary><span class="num">10</span><b>Editing Topics, Types, Properties &amp; Values</b><span class="plus">＋</span></summary><div class="modulebody"><p class="source-note">Guide text below uses the definitions and wording from the provided Certification Hume User Guide.</p><p><strong>Important note: All graph edits should be done within tasks according to the job scope specified in the job GL.</strong></p>
+<h3>10.1 Creating new topics</h3>
+<p>You can create new topics either from another topic or from a schema type by clicking [+] New Topics.</p>
+<p>In the pop-up window:</p>
+<p>Add the topic's name.</p>
+<p>Select the language.</p>
+<p>Start typing the type to prompt autocomplete.</p>
+<p>If you create from the type directly, the type will be preselected.</p>
+<p>Press OK to save.</p>
+<p>You can also create a new topic directly from a property by typing a topic name and selecting “create new.”</p>
+<p><strong>Important note: New topics created in In_Progress / In_Review contributions do not appear in the graph until the contribution is reviewed and submitted. Opening the new topic links while in this state may return an error.</strong></p>
+<h3>10.2 Asserting and removing types</h3>
+<p>You can assert a type to a topic by clicking [+] Add type.</p>
+<p>In the pop-up window, start typing the type you want to assert to prompt autocomplete. Press OK when done.</p>
+<p>You can remove a type by clicking the three-dot menu in the top-right-hand corner of a type.</p>
+<p>You will only be allowed to remove a type if all its values are removed, with the exception of /common/topic, which does not require removing all values but asks for confirmation before proceeding.</p>
+<p>To remove a CVT from a topic (unlink the CVT from the topic), click “remove” in front of the CVT.</p>
+<p>To delete a CVT from the graph, go to the CVT page and remove all values and types from there. The entity will eventually get cleaned up.</p>
+<p>Closed Set type: A Closed Set type is a type whose instances are already represented in KG. When a value is added to or removed from a Closed Set type in a contribution, a linter error will be triggered. Contributors should contact CLs in such cases.</p>
+<h3>10.3 Editing properties</h3>
+<p>To edit a property, click the Edit button next to it.</p>
+<p>A blank field shows the expected type of topics that are added or created in that property, e.g. /film/film.</p>
+<p>Click “x” to clear values or an arrow to undo clearing.</p>
+<p>To add an existing topic, start typing its name and select it from the dropdown list, or enter the MID.</p>
+<p>To create a new topic, choose the “create new” option from the dropdown. New topics are marked NEW before you save the edit.</p>
+<p>Editing properties in CVTs is done in the same manner by filling out each field according to the job GL.</p>
+<p>Important notes:</p>
+<p>Locked and sensitive properties need CL approval before editing. If editing locked properties is allowed in your job, the GL will explain the process of handing off such tasks to Locked properties badge.</p>
+<p>If you edit a CVT from its page, the curated values shown in the contribution cart may not appear on the topics. This is not a concern. When the edits are visible in the contribution cart, they will be processed correctly.</p>
+<h3>10.4 Literal values</h3>
+<p>Adding, changing, or removing literal values does not affect any topic other than the one being updated.</p>
+<p>Dates</p>
+<p>When adding or editing date values, suggestions appear as you type in a date field.</p>
+<p>Display formats are:</p>
+<p>yyyy-mm-dd</p>
+<p>yyyy-mm</p>
+<p>yyyy</p>
+<p>The year 234 BC can be entered as-is, and the number value -0233 will be suggested by the tool.</p>
+<p>BC date examples:</p>
+<h3>1 BCE = 0000</h3>
+<h3>2 BCE = -0001</h3>
+<p>Datetime</p>
+<p>When events are curated with datetime values, use minute-level specificity where available, e.g. 2016-09-20T23:59:59Z, instead of just 2016-09-20.</p>
+<p>For events, choose the time in UTC (offset by Z in the dropdown) to avoid time conversion problems.</p>
+<p><strong>Important note: The day starts at T00:00:00Z and ends at T23:59:59Z.</strong></p>
+<p>Text-based values</p>
+<p>Keys and Property IDs are unique values that link to external sources, e.g. Wikipedia and IMDb, and are listed in the /type/object/key property.</p>
+<p>Keys are asserted from data sources or manually. All keys are appended to namespaces.</p>
+<p>The film Gone With The Wind has the key tt0031381 in the /authority/imdb/title namespace.</p>
+<p>Keys will eventually migrate to dedicated ID properties.</p>
+<p>Names have language codes beside them.</p>
+<p>When editing names, languages that are already asserted or used are disabled in the language dropdown. If you want to change a name for a language, you need to remove the existing value before adding a new one.</p>
+<p>Important notes:</p>
+<p>Wikipedia topic names can be edited by moving the Wikipedia name to alias or completely removing it if invalid.</p>
+<p>Do NOT edit or add names to Geo topics.</p>
+<p>Descriptions</p>
+<p>Descriptions can be autoloaded from outside sources or added manually.</p>
+<p>If a topic has a Wikipedia description (blurb), there is no need to edit the description property at all.</p>
+<p>Manually added descriptions should be grammatically correct, brief (1–2 sentences), and highlight what is known about the topic.</p>
+<p><strong>Important note: Do NOT edit descriptions written by processes other than Hume-Curry.</strong></p>
+<p>Numbers</p>
+<p>Numbers sometimes follow specific units of measurement. An example is the Weight property in the Person type, which should always be in kilograms.</p>
+<p>Be careful not to use the wrong unit for such properties. Like dates, suggestions appear as you type. Select the number you want to add from the dropdown.</p>
+<h3>10.5 Flags</h3>
+<p>Has value (HV) means the property has a value but the value is unknown.</p>
+<p>Has no value (HNV) means the property has no value.</p>
+<p>To flag a property, click the HV or HNV link.</p>
+<p>To remove a flag, click the Remove link beside it.</p>
+<p>Important notes:</p>
+<p>We should not flag properties that are instances of All-has-value or when the schema manual or job GL does not ask for it.</p>
+<p>There is no need to remove existing flags unless specifically stated.</p>
+</div></details><details class="module"><summary><span class="num">11</span><b>Standard Workflow in Tasky</b><span class="plus">＋</span></summary><div class="modulebody"><p class="source-note">Guide text below uses the definitions and wording from the provided Certification Hume User Guide.</p><p>The standard workflow includes Curation, Review, Audit, Revision, and Senior Review.</p>
+<h3>11.1 Curation (C)</h3>
+<p>Contributor 1 (Curator) curates the task according to the instructions and submits suggested edits for review.</p>
+<h3>11.2 Review (R)</h3>
+<p>Contributor 2 (Reviewer) reviews the edits.</p>
+<p>If all edits are correct, the reviewer approves the contribution and the edits are written to the graph.</p>
+<p>If some or all values are incorrect, the reviewer rejects the contribution and asks the curator to fix the errors.</p>
+<h3>11.3 Audit</h3>
+<p>An audit applies to a percentage of approved tasks.</p>
+<p>Contributor 3 (Senior Reviewer) checks the edits. If the edits are correct, the senior reviewer approves the task. If not, the task follows the correction process.</p>
+<h3>11.4 Revision</h3>
+<p>Contributor 1 (Curator) receives the task back, makes the necessary edits, and resubmits it for review.</p>
+<h3>11.5 Senior Review (SR)</h3>
+<p>Contributor 3 (Senior Reviewer) checks the revised edits. The applicable review and correction process is followed.</p>
+<p>Arrange these stages in the correct sequence:</p>
+<p>Revision</p>
+<p>Review</p>
+<p>Curation</p>
+<p>Senior Review</p>
+<p>Audit, where applicable</p>
+<p>Curation</p>
+<p>Review</p>
+<p>Audit, where applicable</p>
+<p>Revision, if corrections are required</p>
+<p>Senior Review of the revised work, following the applicable workflow</p>
+<p>The precise path depends on the task's review and audit requirements.</p>
+</div></details><details class="module"><summary><span class="num">12</span><b>Schema Browser</b><span class="plus">＋</span></summary><div class="modulebody"><p class="source-note">Guide text below uses the definitions and wording from the provided Certification Hume User Guide.</p><h3>12.1 Schema Browser overview</h3>
+<p>The Schema Browser is a tool for viewing schema for domains, types, and properties.</p>
+<p>You can access the Schema Browser at:</p>
+<p><a href="https://hume.google.com/graph/schema[HRID]" rel="noreferrer" target="_blank">https://hume.google.com/graph/schema[HRID]</a></p>
+<p>Here, HRID is the Human-Readable ID for a type or property, such as /film/film.</p>
+<p>For example:</p>
+<p><a href="https://hume.google.com/graph/schema/film/film" rel="noreferrer" target="_blank">https://hume.google.com/graph/schema/film/film</a></p>
+<p>You can also access the browser using the “view” link on type and property flyouts.</p>
+<p>For more information about how to use the Schema Browser, see the Schema Browser Intro document.</p>
+<h3>12.2 Schema deprecation</h3>
+<p>If a data graph schema is being retired, one of the following deprecation statuses may appear with that schema on the topic page.</p>
+<p>Status</p>
+<p>Definition and required action</p>
+<p>DEPRECATION_ANNOUNCED</p>
+<p>The schema is in the process of being deprecated. Curation should be done in the existing schema.</p>
+<p>DEPRECATED_IN_MIGRATION</p>
+<p>The schema migration is ongoing. Curation should be done in the existing and the new schema (replaced by property), as indicated in the job GL.</p>
+<p>DEPRECATED_READ_ONLY</p>
+<p>The schema is deprecated and is non-editable. Curation should be done in the new schema.</p>
+<p>DEPRECATED_DATA_DELETED</p>
+<p>The schema is deleted; no reads or writes are allowed. Curation should be done in the new schema.</p>
+</div></details><details class="module"><summary><span class="num">13</span><b>Key Rules for Certification</b><span class="plus">＋</span></summary><div class="modulebody"><p class="source-note">Quick reference based on the Certification Hume User Guide.</p><h3>Use the correct tool</h3><p>Use Curry (Knowledge Graph Editor) to inspect topics and the graph; use Tasky to work on assigned tasks and submit contributions.</p><h3>Follow task scope</h3><p>All graph edits must be made within tasks and according to the job Guidelines (GL). Never work on a queue item outside Tasky.</p><h3>Verify identity</h3><p>Do not merge topics based on names alone. Check identifying details and follow the reconciliation process.</p><h3>Check provenance</h3><p>Inspect provenance and assertion sources before deciding how incorrect data can be corrected.</p><h3>Choose reliable sources</h3><p>Check ownership, authorship, freshness, references, and whether a site is official. Avoid fan sites and unreliable user-generated sources.</p><h3>Do not guess</h3><p>If credible sources conflict and research does not resolve the uncertainty, leave the property blank according to the applicable GL.</p><h3>Respect property indicators</h3><p>Locked and sensitive properties require special handling and may need approval or handoff. High fan-out properties need extra care.</p><h3>Use correct flags</h3><p>HV means a value exists but is unknown. HNV means the property has no value. Follow the schema manual and job GL.</p><h3>Follow review workflow</h3><p>Curation is followed by review; audit may apply. Incorrect work may return for revision and senior review.</p><h3>Follow schema status</h3><p>Use the deprecation status and job GL to determine whether curation belongs in the existing schema, both schemas, or the new schema.</p></div></details><details class="module"><summary><span class="num">14</span><b>Progress Tracker</b><span class="plus">＋</span></summary><div class="modulebody"><p class="source-note">Guide text below uses the definitions and wording from the provided Certification Hume User Guide.</p><p>Use this checklist to track your readiness as you complete the training.</p>
+<h3>Learning progress</h3>
+<p>Module 1 — Hume Tools Overview</p>
+<p>Module 2 — Topics, Types, Properties and Values</p>
+<p>Module 3 — Provenance and Assertion Sources</p>
+<p>Module 4 — Flyouts</p>
+<p>Module 5 — Search in Curry</p>
+<p>Module 6 — Filtering and Advanced Search</p>
+<p>Module 7 — Reliable and Unreliable Sources</p>
+<p>Module 8 — Tasky Assignments and Queues</p>
+<p>Module 9 — Tasks, Task Search and Task Detail</p>
+<p>Module 10 — Editing Topics, Types, Properties and Values</p>
+<p>Module 11 — Standard Workflow in Tasky</p>
+<p>Module 12 — Schema Browser</p>
+<p>Module 13 — Final Interactive Practice</p>
+<h3>Suggested learning gates</h3>
+<p><strong>Gate 1 — Tool navigation: You can explain the purpose of Curry and Tasky and locate the key interface elements.</strong></p>
+<p><strong>Gate 2 — Graph concepts: You can distinguish topics, types, properties, values, CVTs, and special property indicators.</strong></p>
+<p><strong>Gate 3 — Research: You can identify reliable sources, handle conflicts, and apply search filters.</strong></p>
+<p><strong>Gate 4 — Task management: You can select the correct task action and outcome code for common situations.</strong></p>
+<p><strong>Gate 5 — Editing: You understand topic creation, property editing, flags, date formats, and approval requirements.</strong></p>
+<p><strong>Gate 6 — Workflow and schema: You understand review stages and can interpret schema deprecation statuses.</strong></p>
+<p>A trainer can use these gates to review progress and provide additional practice before a new joiner begins live curation.</p></div></details></div></section>
+<section id="quiz"><div class="head"><div><div class="eyebrow">Remember it by doing it</div><h2>Separate Interactive Quiz</h2></div><p>Choose an option first, then submit to see whether you were right and reveal the explanation. Mark cards complete to track your progress.</p></div><div class="progress-wrap"><div class="progress" id="progress"></div></div><div class="qtop"><span id="counter">Challenge 1 of 20</span><span id="completedCount">0 completed</span></div>
+<div class="quizgrid"><div><div class="scene"><div aria-label="Flip question card to reveal answer" class="flip" id="flipCard" role="button" tabindex="0"><div class="face front"><div><span class="pill" id="topic"></span><h3 id="question"></h3><div aria-label="Answer choices" class="options" id="options" role="group"></div><p aria-live="polite" class="hint" id="selectionHint">Select one answer to continue.</p></div><div><button class="btn primary" disabled="" id="reveal">Check answer &amp; reveal ↻</button></div></div><div class="face back"><div><span class="pill" id="resultPill">Answer revealed</span><h3 id="resultMessage"></h3><h3 id="answer"></h3><div class="why"><b>Why it matters</b><p id="explanation"></p></div></div><div><p class="hint">Mark complete or continue to the next challenge.</p><button class="btn secondary" id="flipBack">↻ Flip back to question</button></div></div></div></div><div class="nav"><button class="btn secondary" id="prev">← Previous</button><button class="btn primary" id="next">Next challenge →</button></div></div>
+<aside class="side"><h3>Your progress</h3><p style="color:var(--muted);margin-top:-6px">Jump to any challenge. Green outlines indicate completed cards.</p><div class="dots" id="dots"></div><label class="checkline"><input id="markDone" type="checkbox"/> Mark this challenge complete</label><div class="actions"><button class="btn secondary" id="resetQuiz">Reset progress</button></div><p class="hint">This standalone file does not send your answers anywhere.</p></aside></div></section>
+<section><div class="head"><div><div class="eyebrow">Ready for live work?</div><h2>Readiness checkpoint</h2></div><p>Check each gate when you can explain the idea without help.</p></div><div class="gates"><label class="gate"><input type="checkbox"/><div><b>01 · Tool navigation</b><span>Explain Curry vs Tasky and locate key interface elements.</span></div></label><label class="gate"><input type="checkbox"/><div><b>02 · Graph concepts</b><span>Distinguish topics, types, properties, values, CVTs, and flags.</span></div></label><label class="gate"><input type="checkbox"/><div><b>03 · Research</b><span>Assess sources, handle conflicts, and apply search filters.</span></div></label><label class="gate"><input type="checkbox"/><div><b>04 · Task management</b><span>Choose suitable actions and outcome codes.</span></div></label><label class="gate"><input type="checkbox"/><div><b>05 · Editing</b><span>Understand topic reuse, dates, flags, and approval requirements.</span></div></label><label class="gate"><input type="checkbox"/><div><b>06 · Workflow + schema</b><span>Explain review stages and schema deprecation statuses.</span></div></label></div></section>
+<section><div class="callout"><h3>Keep the golden rule in mind</h3><p>Verify before you edit. Follow the assigned task, job-specific Guidelines (GL), schema instructions, and team procedures. If research does not resolve uncertainty, do not guess.</p><div class="actions"><a class="btn primary" href="#quiz">Practise again ↑</a><button class="btn secondary" onclick="window.print()">Print this page / Save as PDF</button></div></div></section>
+<footer>CURRY × TASKY · KNOWLEDGE QUEST<br/>Independent learning aid based on the supplied training notes. Always follow current job-specific guidance for real curation work.</footer></div>
+<script>
+const cards=[{"topic": "Tool choice", "q": "You need to inspect a topic’s types and values. Which tool should you use?", "a": "Curry.", "why": "Curry is used to inspect and curate graph data; Tasky manages assigned work and submission."}, {"topic": "Edit workflow", "q": "You found the right information online. Where should you make the assigned edit?", "a": "Make the edit within the assigned task in Tasky.", "why": "Edits must follow the task scope and applicable job guidelines."}, {"topic": "Curry contribution", "q": "You create a test contribution in Curry outside Tasky. Can it be processed as a graph change?", "a": "No. Discard it and make edits through the assigned Tasky workflow.", "why": "Only contributions written in Tasky result in graph changes."}, {"topic": "Duplicate detection", "q": "Two topics share a name. Should you merge them immediately?", "a": "No. Verify identity and follow the reconciliation process.", "why": "Compare identifying information, types, and canonical IDs; a name alone is not proof."}, {"topic": "Advanced search", "q": "Several John Black results appear, but you know the person died on 29 August 1854. What is the strongest approach?", "a": "Use exact-name matching, relevant type filters, and a date-of-death property constraint.", "why": "Combining filters reduces ambiguity."}, {"topic": "Date format", "q": "What is the standard format for January 1923?", "a": "1923-01.", "why": "Use consistent date formats and leading zeros."}, {"topic": "Source quality", "q": "A site has excessive ads, no author details, and copied content. Is it a strong source?", "a": "No. Seek a more credible source.", "why": "Check URL, ownership, authorship, freshness, and references."}, {"topic": "Conflicting sources", "q": "Two credible sources conflict and further research does not resolve the difference. What should you do?", "a": "Leave the property blank, following the relevant job GL.", "why": "Do not turn unresolved uncertainty into an unsupported fact."}, {"topic": "Reported claim", "q": "A source says someone “reportedly” attended a university, with no confirmation. Is it established fact?", "a": "No. Verify it; if uncertainty remains, leave the value blank.", "why": "Qualifying words can signal that a claim is not established."}, {"topic": "Blocked task", "q": "A task is waiting for another task to finish. Where should you expect to find it?", "a": "My Blocked.", "why": "Blocked tasks wait on dependencies, future dates, or bugs."}, {"topic": "Priority", "q": "Which job is more urgent: P0 or P2?", "a": "P0.", "why": "P0 is the most urgent priority in this guide."}, {"topic": "Pause work", "q": "You need to stop for the day and resume later. Which action should you consider?", "a": "Park.", "why": "Park saves the task for later; Abandon releases it back into the queue."}, {"topic": "Specialist help", "q": "You need a Language or Domain specialist. Which action should you consider?", "a": "Request Handoff.", "why": "Use the handoff option in the task’s More menu."}, {"topic": "Out of scope", "q": "You are assigned a film task, but the topic is an animal. Which outcome may fit?", "a": "Can’t — Out of Scope.", "why": "Match the outcome code to the actual reason and the job GL."}, {"topic": "Existing topic", "q": "A property expects a film topic and you find a verified existing match. What should you do?", "a": "Select the existing topic after verifying it.", "why": "Reuse the correct topic instead of creating a duplicate."}, {"topic": "HV vs HNV", "q": "What is the difference between HV and HNV?", "a": "HV: the property has a value but the value is unknown. HNV: the property has no value.", "why": "A blank field alone does not decide the flag; follow the schema manual and job GL."}, {"topic": "Locked property", "q": "You find an incorrect value in a locked property. Can you edit it normally?", "a": "No. Follow the applicable approval or handoff process.", "why": "Locked and sensitive properties have special rules."}, {"topic": "Workflow", "q": "Put the typical workflow stages in order.", "a": "Curation → Review → Audit (where applicable) → Revision (if needed) → Senior Review of revised work.", "why": "The precise path depends on the task’s review and audit requirements."}, {"topic": "Schema status", "q": "A schema is marked DEPRECATED_READ_ONLY. Where should curation happen?", "a": "In the new schema.", "why": "The old schema is deprecated and non-editable."}, {"topic": "Rejected contribution", "q": "A reviewer finds incorrect values. What happens next?", "a": "The curator corrects the errors and resubmits for review.", "why": "Use the review and revision loop to maintain quality."}];
+const answerChoices = [[["Curry", "Tasky", "Schema Browser", "A browser search engine"], 0], [["Make an edit directly in any Curry contribution", "Make the edit within the assigned task in Tasky", "Create a new topic first", "Wait until the task is abandoned"], 1], [["Yes, all Curry contributions are automatically processed", "Yes, if the topic name is unique", "No. Discard it and edit through the assigned Tasky workflow", "Only if you add a source"], 2], [["Merge them immediately", "Choose the first result", "Create a third topic", "Verify identity and follow the reconciliation process"], 3], [["Search only by first name", "Use exact-name matching, relevant type filters, and a date-of-death constraint", "Ignore the date", "Create a new topic"], 1], [["01/1923", "1923-1", "1923-01", "January 23"], 2], [["A site with excessive ads, no author details, and copied content", "An official record with clear ownership and references", "A current source with named authors", "A reputable publication citing primary sources"], 0], [["Pick whichever source was found first", "Average the two claims", "Leave the property blank, following the relevant job GL", "Enter both values without checking guidance"], 2], [["Yes, “reportedly” always confirms a fact", "No. Verify it; if uncertainty remains, leave the value blank", "Enter it as confirmed", "Ignore the source date only"], 1], [["My Assigned", "My Blocked", "My Escalated", "My Completed"], 1], [["P0", "P1", "P2", "P3"], 0], [["Abandon", "Submit", "Park", "Request Handoff"], 2], [["Park", "Abandon", "Request Handoff", "Submit for review"], 2], [["Can’t — Out of Scope", "Park", "Request Handoff", "Submit"], 0], [["Create a duplicate to be safe", "Select the existing topic after verifying it", "Choose a random result", "Leave the task without checking"], 1], [["HV means no value; HNV means unknown value", "HV means hidden value; HNV means historical value", "HV: value exists but is unknown; HNV: property has no value", "They mean the same thing"], 2], [["Edit it normally", "Delete the topic", "Change the schema status yourself", "Follow the applicable approval or handoff process"], 3], [["Review → Curation → Revision → Audit", "Curation → Review → Audit (where applicable) → Revision (if needed) → Senior Review of revised work", "Audit → Senior Review → Curation", "Revision always comes first"], 1], [["Continue editing in the deprecated schema", "Delete the schema", "Curate in the new schema", "Ignore the status"], 2], [["Close the task without changes", "Ask the reviewer to change the result", "Create a duplicate contribution", "Correct the errors and resubmit for review"], 3]];
+cards.forEach((card,i)=>{card.options=answerChoices[i][0];card.correct=answerChoices[i][1];});
+let selected=null; let submitted=false;
+let idx=0;const done=new Set();const $=id=>document.getElementById(id);
+// In-app content editor: editable module text and tables, saved locally in this browser.
+const moduleBodies=()=>Array.from(document.querySelectorAll('#learning .modulebody'));
+const originalModuleHTML=moduleBodies().map(el=>el.innerHTML);
+const contentStorageKey='humeCertificationQuestModuleContent_v2';
+let editSnapshots=[];
+const editableHeaders=()=>Array.from(document.querySelectorAll('#learning .module > summary b, #learning .head h2'));
+function loadSavedModuleContent(){
+  try{const saved=JSON.parse(localStorage.getItem(contentStorageKey)||'null');if(saved&&Array.isArray(saved.modules)&&saved.modules.length===moduleBodies().length){moduleBodies().forEach((el,i)=>{if(typeof saved.modules[i]==='string')el.innerHTML=saved.modules[i];});}if(saved&&Array.isArray(saved.headers)&&saved.headers.length===editableHeaders().length){editableHeaders().forEach((el,i)=>{if(typeof saved.headers[i]==='string')el.innerHTML=saved.headers[i];});}}
+  catch(err){console.warn('Saved Hume content could not be loaded.',err);}
+}
+function setEditorMode(on){
+  document.body.classList.toggle('editing',on);
+  moduleBodies().forEach(el=>{el.contentEditable=on?'true':'false';el.setAttribute('aria-label',on?'Editable learning module content':'Learning module content');});
+  editableHeaders().forEach(el=>{el.contentEditable=on?'true':'false';el.setAttribute('aria-label',on?'Editable heading':'Heading');});
+  $('editContent').hidden=on;$('saveContent').hidden=!on;$('cancelContent').hidden=!on;$('editStatus').hidden=!on;
+  if(on){document.querySelectorAll('#learning .module').forEach(m=>m.open=true);}
+}
+$('editContent').addEventListener('click',()=>{editSnapshots={modules:moduleBodies().map(el=>el.innerHTML),headers:editableHeaders().map(el=>el.innerHTML)};setEditorMode(true);$('editStatus').textContent='Editing is on. Click module headings, section headings, text, or table cells to edit them. Choose Save Changes to keep edits in this browser, or Cancel Edits to undo this editing session.';});
+$('saveContent').addEventListener('click',()=>{
+  try{localStorage.setItem(contentStorageKey,JSON.stringify({modules:moduleBodies().map(el=>el.innerHTML),headers:editableHeaders().map(el=>el.innerHTML)}));setEditorMode(false);$('editStatus').hidden=false;$('editStatus').textContent='Changes saved in this browser, including headings. They remain available in this browser unless its site data is cleared.';}
+  catch(err){$('editStatus').hidden=false;$('editStatus').textContent='Could not save to browser storage. Your edits are still visible; copy/back up the content before closing this page.';}
+});
+$('cancelContent').addEventListener('click',()=>{moduleBodies().forEach((el,i)=>el.innerHTML=editSnapshots.modules[i]??originalModuleHTML[i]);editableHeaders().forEach((el,i)=>el.innerHTML=editSnapshots.headers[i]);setEditorMode(false);$('editStatus').hidden=false;$('editStatus').textContent='Unsaved edits were cancelled.';});
+loadSavedModuleContent();
+function render(){const c=cards[idx];selected=null;submitted=false;$('topic').textContent=c.topic;$('question').textContent=c.q;$('answer').textContent=c.a;$('explanation').textContent=c.why;$('counter').textContent='Challenge '+(idx+1)+' of '+cards.length;$('completedCount').textContent=done.size+' completed';$('progress').style.width=(done.size/cards.length*100)+'%';$('flipCard').classList.remove('flipped');$('markDone').checked=done.has(idx);$('prev').disabled=idx===0;$('next').textContent=idx===cards.length-1?'Restart quiz ↻':'Next challenge →';$('reveal').disabled=true;$('reveal').textContent='Check answer & reveal ↻';$('selectionHint').textContent='Select one answer to continue.';$('resultMessage').textContent='';$('resultPill').textContent='Answer revealed';$('resultMessage').className='';$('options').innerHTML=c.options.map((option,i)=>'<button type="button" class="option" data-option="'+i+'" aria-pressed="false">'+String.fromCharCode(65+i)+'. '+option+'</button>').join('');document.querySelectorAll('.dot').forEach((d,i)=>{d.classList.toggle('active',i===idx);d.classList.toggle('done',done.has(i));});}
+$('options').addEventListener('click',e=>{const b=e.target.closest('button[data-option]');if(!b||submitted)return;selected=Number(b.dataset.option);document.querySelectorAll('.option').forEach((o,i)=>{o.classList.toggle('selected',i===selected);o.setAttribute('aria-pressed',String(i===selected));});$('selectionHint').textContent='Your choice: '+String.fromCharCode(65+selected)+'. You can change it before submitting.';$('reveal').disabled=false;});
+$('reveal').addEventListener('click',e=>{e.stopPropagation();if(selected===null||submitted)return;submitted=true;const c=cards[idx];const correct=selected===c.correct;$('resultPill').textContent=correct?'Correct ✓':'Not quite';$('resultMessage').textContent=correct?'Great job — that’s correct!':'Good try — review the correct answer below.';$('resultMessage').className=correct?'result-good':'result-wrong';$('flipCard').classList.add('flipped');document.querySelectorAll('.option').forEach((o,i)=>{o.disabled=true;if(i===c.correct)o.classList.add('selected');});$('reveal').disabled=true;});$('flipBack').addEventListener('click',e=>{e.stopPropagation();$('flipCard').classList.remove('flipped');});
+$('prev').addEventListener('click',()=>{idx=Math.max(0,idx-1);render()});$('next').addEventListener('click',()=>{idx=idx===cards.length-1?0:idx+1;render()});$('markDone').addEventListener('change',e=>{if(e.target.checked)done.add(idx);else done.delete(idx);render()});$('resetQuiz').addEventListener('click',()=>{done.clear();idx=0;render()});
+$('dots').innerHTML=cards.map((c,i)=>'<button class="dot" title="'+c.topic.replace(/"/g,'&quot;')+'" data-i="'+i+'">'+(i+1)+'</button>').join('');$('dots').addEventListener('click',e=>{const b=e.target.closest('button[data-i]');if(b){idx=Number(b.dataset.i);render()}});
+$('moduleSearch').addEventListener('input',e=>{const q=e.target.value.toLowerCase();document.querySelectorAll('.module').forEach(m=>{m.style.display=m.textContent.toLowerCase().includes(q)?'':'none'})});$('expandAll').addEventListener('click',()=>document.querySelectorAll('.module').forEach(m=>m.open=true));$('collapseAll').addEventListener('click',()=>document.querySelectorAll('.module').forEach(m=>m.open=false));render();
+</script></body></html>
